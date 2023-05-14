@@ -132,10 +132,12 @@ void Driver_Check_Up (void *pvParameters)
 					/*Flag which used to check for automatic operation*/
 					prevState_up = 1;
 					/*Delaying 1 second before checking again (For Automatic mode)*/
-					vTaskDelay( 1000/portTICK_RATE_MS);
+					vTaskDelay( 500/portTICK_RATE_MS);
 				}
 				else 
 				{
+					/*Flag used to override the control in case of Auto UP*/
+					Change_flag_down = 1;
 					/*Button is still pressed after 1 second (Manual Mode)*/
 					prevState_up = 0;
 				}
@@ -209,10 +211,12 @@ void Driver_Check_Down (void *pvParameters)
 					/*Flag which used to check for automatic operation*/
 					prevState_down = 1;
 					/*Delaying 1 second before checking again (For Automatic mode)*/
-					vTaskDelay( 1000/portTICK_RATE_MS);
+					vTaskDelay( 500/portTICK_RATE_MS);
 				}
 				else 
 				{
+					/*Flag used to override the control in case of Auto Down*/
+					Change_flag_up = 1;
 					/*Button is still pressed after 1 second (Manual Mode)*/
 					prevState_down = 0;
 				}
@@ -320,10 +324,12 @@ void Passenger_Check_Up (void *pvParameters)
 					/*Flag which used to check for automatic operation*/
 					prevState_up = 1;
 					/*Delaying 1 second before checking again (For Automatic mode)*/
-					vTaskDelay( 1000/portTICK_RATE_MS);
+					vTaskDelay( 500/portTICK_RATE_MS);
 				}
 				else 
 				{
+					/*Flag used to override the control in case of Auto Up*/
+					Change_flag_down = 1;
 					/*Button is still pressed after 1 second (Manual Mode)*/
 					prevState_up = 0;
 				}
@@ -396,10 +402,12 @@ void Passenger_Check_Down (void *pvParameters)
 					/*Flag which used to check for automatic operation*/
 					prevState_down = 1;
 					/*Delaying 1 second before checking again (For Automatic mode)*/
-					vTaskDelay( 1000/portTICK_RATE_MS);
+					vTaskDelay( 500/portTICK_RATE_MS);
 				}
 				else 
 				{
+					/*Flag used to override the control in case of Auto Down*/
+					 Change_flag_up = 1;
 					/*Button is still pressed after 1 second (Manual Mode)*/
 					prevState_down = 0;
 				}
