@@ -14,3 +14,5 @@ https://www.youtube.com/watch?v=Nmgor7xsv_c&ab_channel=ChipRide
 
 
 it is recommended that you set the IDE optimaization to the lowest level.
+
+Remember Gowely
